@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"	rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventosApp</title>	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link type="text/css" rel="stylesheet"	href="/materialize/css/personalizado.css" media="screen,projection" />
+</head>
+
+
+
+</head>
+<body>
+	
+
+
+    <nav class="#26a69a teal lighten-1" role="navigation">
+    <div class="nav-wrapper">
+      <a id="logo-container" href="/" class="brand-logo">Robinson - Java</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Início</a></li>
+        <li><a href="/logout">Logout</a></li>        
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="/">Início</a></li>
+        <li><a href="/logout">Logout</a></li> 
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+ <div class="container">
+  
+
+  
+  
+  
+    <div class="section">
+    
+
+		<div class="divider"></div>
+	<br />	
+	
+	<h1>Lista de Eventos</h1>
+	<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
+	
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Local</th>
+			<th>Data</th>
+			<th>Horário</th>
+		</thead>
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				
+				<td><span th:text="${evento.nome}"></span></td>
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td></td><span th:text="${evento.horario}"></span></td>
+			</tr>		
+
+
+
+		</tbody>
+	</table>
+
+</div>
+
+  
+  
+</div>
+  <!--  Scripts-->
+  	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ 	<script src="/materialize/js/init.js"></script>
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+	
+	
+	
+	
+	<script>
+	 $(document).ready(function(){
+		    $('select').formSelect();
+		  });
+	</script>
+
+  
+
+  </body>
+</html>
+
+
+
